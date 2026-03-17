@@ -27,7 +27,18 @@ int isProcessRunning(const char *nameOfProcess) {
 }
 
 int main() {
-    printf("Starting Selective Resource Manager");
+    printf("Starting Selective Resource Manager...\n");
+
+    while (1) {
+        // CHeck if the desire development tools are open
+        if (isProcessRunning("vscodium") || isProcessRunning("gcc")) {
+            changeGovernor("performance");
+        } else {
+            changeGovernor("powersave");
+        }
+        // Sleep to save battery
+        sleep(3);
+    }
 
     return 0;
 }
