@@ -8,7 +8,7 @@
 // Pass a pointer of type const char of the mode desired
 void changeGovernor(const char *mode) {
     // Create file pointer with the path to the governor file and the ability to write
-    FILE *file = fopen(pathToGovernor, "W")
+    FILE *file = fopen(pathToGovernor, "W");
     if (file == NULL) {
         perror("Error opening governor path. Make sure you are root.");
         return;
